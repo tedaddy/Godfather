@@ -1,0 +1,18 @@
+import java.io.FileInputStream;
+
+import javazoom.jl.*;
+import javazoom.jl.decoder.InputStreamSource;
+import javazoom.jl.player.JavaSoundAudioDevice;
+
+public class test {
+
+	public static void main(String[] args) {
+        try {
+        	FileInputStream fis = new FileInputStream("audio/variant1.mp3");
+        	InputStreamSource in = new InputStreamSource(fis);
+        	System.out.println(in.length());
+        } catch(Exception e) {System.out.println(e);}
+	}
+
+}
+

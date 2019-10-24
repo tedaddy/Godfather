@@ -1,0 +1,90 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JTextArea;
+import javax.swing.JTree;
+
+public class test extends JFrame {
+
+	private JPanel contentPane;
+	private JLabel lblTask;
+	private JLabel lblTask_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					test frame = new test();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public test() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 1920, 1080);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255,204,96));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Task 1");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("OCR A Extended", Font.PLAIN, 32));
+		lblNewLabel.setForeground(new Color(0,44,72));
+		lblNewLabel.setBounds(679, 287, 482, 58);
+		contentPane.add(lblNewLabel);
+		
+		lblTask = new JLabel("Task 2");
+		lblTask.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTask.setForeground(new Color(0, 44, 72));
+		lblTask.setFont(new Font("OCR A Extended", Font.PLAIN, 32));
+		lblTask.setBounds(679, 471, 482, 58);
+		contentPane.add(lblTask);
+		
+		lblTask_1 = new JLabel("Task 3");
+		lblTask_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTask_1.setForeground(new Color(0, 44, 72));
+		lblTask_1.setFont(new Font("OCR A Extended", Font.PLAIN, 32));
+		lblTask_1.setBounds(679, 592, 482, 58);
+		contentPane.add(lblTask_1);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBackground(Color.WHITE);
+		textArea.setBounds(679, 356, 463, 122);
+		contentPane.add(textArea);
+		
+		JTextArea textArea_1 = new JTextArea();
+		textArea_1.setBackground(Color.WHITE);
+		textArea_1.setBounds(679, 540, 463, 32);
+		contentPane.add(textArea_1);
+		
+		JTextArea textArea_2 = new JTextArea();
+		textArea_2.setBackground(Color.WHITE);
+		textArea_2.setBounds(679, 660, 463, 148);
+		contentPane.add(textArea_2);
+		
+		JTree tree = new JTree();
+		tree.setBackground(new Color(255,204,96));
+		tree.setBounds(10, 287, 255, 401);
+		contentPane.add(tree);
+		setUndecorated(true);
+	}
+}

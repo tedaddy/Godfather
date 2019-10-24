@@ -6,6 +6,18 @@
 		<item value="294" key="y"/>
 		<item value="492" key="height"/>
 	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.border.BorderDialog">
+		<item value="785" key="x"/>
+		<item value="414" key="width"/>
+		<item value="350" key="y"/>
+		<item value="380" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.models.tree.TreeModelDialog">
+		<item value="750" key="x"/>
+		<item value="483" key="width"/>
+		<item value="296" key="y"/>
+		<item value="488" key="height"/>
+	</section>
 	<section name="org.eclipse.wb.internal.swing.model.property.editor.icon.IconPropertyEditor$ImageDialog">
 		<item value="617" key="x"/>
 		<item value="749" key="width"/>

@@ -1,0 +1,151 @@
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;  
+
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JSeparator;
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.border.MatteBorder;
+import javax.swing.JScrollPane;
+import java.awt.GridBagLayout;
+
+public class test extends JFrame {
+
+	private JPanel contentPane;
+	public JButton[] btns = new JButton[30];
+	public JLabel[] lbls = new JLabel[30];
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					test frame = new test();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public test() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 1920, 1080);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255,204,96));
+	    setUndecorated(true);
+		setResizable(true);
+		setContentPane(contentPane);
+		contentPane.setLayout(new BorderLayout(0, 0));
+		
+		JButton GodfatherLabel = new JButton("GODFATHER");
+		GodfatherLabel.setBorder(new MatteBorder(0, 0, 5, 0, (Color) new Color(26,49,68)));
+		GodfatherLabel.setVerticalAlignment(SwingConstants.TOP);
+		GodfatherLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		GodfatherLabel.setForeground(new Color(26,49,68));
+		GodfatherLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 46));
+		GodfatherLabel.setContentAreaFilled(false);
+		GodfatherLabel.setRolloverEnabled(false);
+		GodfatherLabel.setRequestFocusEnabled(false);
+		GodfatherLabel.setBorderPainted(true);
+		GodfatherLabel.setEnabled(true);
+		GodfatherLabel.setFocusable(false);
+		GodfatherLabel.setFocusTraversalKeysEnabled(false);
+		GodfatherLabel.setFocusPainted(false); 
+		contentPane.add(GodfatherLabel, BorderLayout.NORTH);
+		
+		
+
+		
+		JLabel variants = new JLabel("variants");
+		variants.setBorder(new MatteBorder(0, 0, 0, 5, (Color) new Color(26,49,68)));
+		variants.setVerticalAlignment(SwingConstants.TOP);
+		variants.setHorizontalAlignment(SwingConstants.CENTER);
+		variants.setMaximumSize(new Dimension(100, 100));
+		variants.setFont(new Font("Brandish", Font.PLAIN, 99));
+		variants.setForeground(new Color(26,49,68));
+		variants.setUI(new VerticalLabelUI(false));
+		contentPane.add(variants, BorderLayout.WEST);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		contentPane.add(scrollPane, BorderLayout.CENTER);
+		
+		JPanel gridpanel = new JPanel();
+		gridpanel.setBorder(null);
+		scrollPane.setViewportView(gridpanel);
+		//gridpanel.setPreferredSize(new Dimension(1665, 20000));
+		gridpanel.setBackground(new Color(255,204,96));	
+		GridBagLayout gbl_gridpanel = new GridBagLayout();
+		GridBagConstraints c = new GridBagConstraints();
+		gridpanel.setLayout(gbl_gridpanel);
+		
+		JButton button = new JButton("Button 1");
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 0;
+		c.gridy = 0;
+		gridpanel.add(button, c);
+
+		button = new JButton("Button 2");
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 1;
+		c.gridy = 0;
+		gridpanel.add(button, c);
+
+
+		
+		/*for( int i = 0; i < 10; i++ ) {
+			btns[i] = new JButton("numb." + (i+1));
+			
+			btns[i].setContentAreaFilled(false);
+			btns[i].setRolloverEnabled(false);
+			btns[i].setRequestFocusEnabled(false);
+			btns[i].setEnabled(true);
+			btns[i].setFocusable(false);
+			btns[i].setFocusTraversalKeysEnabled(false);
+			btns[i].setFocusPainted(true);
+			btns[i].setBorderPainted(false);
+			
+			btns[i].setIcon(new ImageIcon("/images/variantCard.png"));
+			
+			
+			btns[i].setFont(new Font("Brandish", Font.PLAIN, 30));
+			btns[i].setForeground(new Color(255,204,96));
+			btns[i].setVerticalTextPosition(SwingConstants.CENTER);
+			btns[i].setHorizontalTextPosition(SwingConstants.CENTER);
+			btns[i].setBounds(50+disposeX, 70+disposeY, 419, 241);
+		    gridpanel.add(btns[i]);
+			disposeX+=469;
+			if( (i+1)%3==0 ) {
+				disposeY+=291;
+				disposeX=0;
+			}
+		}*/
+
+	}
+}

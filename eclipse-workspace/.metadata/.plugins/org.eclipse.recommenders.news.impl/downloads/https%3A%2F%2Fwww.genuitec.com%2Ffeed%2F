@@ -12,12 +12,131 @@
 	<atom:link href="https://www.genuitec.com/feed/" rel="self" type="application/rss+xml" />
 	<link>https://www.genuitec.com</link>
 	<description>The Cloud Control Company</description>
-	<lastBuildDate>Thu, 11 Jul 2019 17:52:54 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 22 Oct 2019 16:59:27 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	
 	<item>
+		<title>React Native Authentication with Facebook</title>
+		<link>https://www.genuitec.com/react-native-authentication-with-facebook/</link>
+		<pubDate>Thu, 26 Sep 2019 20:05:49 +0000</pubDate>
+		<dc:creator><![CDATA[dunebook7]]></dc:creator>
+				<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[codemix]]></category>
+		<category><![CDATA[react native]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=623558</guid>
+		<description><![CDATA[<p>Learn how to create a simple React Native app that uses Facebook for authentication. We use CodeMix for development and the Expo toolchain to make this possible without needing XCode or Android Studio. Check out our newest Blog and see how it's done!</p>
+<p>The post <a rel="nofollow" href="https://www.genuitec.com/react-native-authentication-with-facebook/">React Native Authentication with Facebook</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
+		<title>CodeMix 2019.9.19 &#8211; It&#8217;s Go Time!</title>
+		<link>https://www.genuitec.com/codemix-2019-9-19/</link>
+		<pubDate>Thu, 19 Sep 2019 16:01:24 +0000</pubDate>
+		<dc:creator><![CDATA[Brian Fernandes]]></dc:creator>
+				<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[codemix]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=625180</guid>
+		<description><![CDATA[<p>The post <a rel="nofollow" href="https://www.genuitec.com/codemix-2019-9-19/">CodeMix 2019.9.19 &#8211; It&#8217;s Go Time!</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
+		<title>CodeMix 2019.8.21 Performance Update</title>
+		<link>https://www.genuitec.com/codemix-2019-8-21-performance-update/</link>
+		<pubDate>Fri, 23 Aug 2019 13:13:46 +0000</pubDate>
+		<dc:creator><![CDATA[timwebb]]></dc:creator>
+				<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[In Product]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=621293</guid>
+		<description><![CDATA[<p>The CodeMix 2019.8.21 release included a major update on the performance and CPU utilization during development. As reported previously, we have been working through some lingering CPU consumption impacting a subset of our users. We are happy to report strong improvements in this release.</p>
+<p>The post <a rel="nofollow" href="https://www.genuitec.com/codemix-2019-8-21-performance-update/">CodeMix 2019.8.21 Performance Update</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
+		<title>CodeMix 2019.8.21 is Here — Bringing Flexibility and Speed!</title>
+		<link>https://www.genuitec.com/codemix-2019-8-21-is-here/</link>
+		<pubDate>Wed, 21 Aug 2019 20:55:58 +0000</pubDate>
+		<dc:creator><![CDATA[timwebb]]></dc:creator>
+				<category><![CDATA[Genuitec]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=621279</guid>
+		<description><![CDATA[<p>The post <a rel="nofollow" href="https://www.genuitec.com/codemix-2019-8-21-is-here/">CodeMix 2019.8.21 is Here — Bringing Flexibility and Speed!</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
+		<title>Upload files using Vue and Firebase</title>
+		<link>https://www.genuitec.com/upload-files-using-vue-and-firebase/</link>
+		<pubDate>Tue, 13 Aug 2019 17:57:54 +0000</pubDate>
+		<dc:creator><![CDATA[dunebook7]]></dc:creator>
+				<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[Firebase]]></category>
+		<category><![CDATA[vue]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=620223</guid>
+		<description><![CDATA[<p>The post <a rel="nofollow" href="https://www.genuitec.com/upload-files-using-vue-and-firebase/">Upload files using Vue and Firebase</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
+		<title>Ingenuity + Awesome Customers = Optimal CodeMix Performance</title>
+		<link>https://www.genuitec.com/optimal-codemix-performance/</link>
+		<pubDate>Thu, 01 Aug 2019 15:03:14 +0000</pubDate>
+		<dc:creator><![CDATA[Brian Fernandes]]></dc:creator>
+				<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[In Product]]></category>
+		<category><![CDATA[Webclipse]]></category>
+		<category><![CDATA[codemix]]></category>
+		<category><![CDATA[codemix release]]></category>
+		<category><![CDATA[software release]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=619206</guid>
+		<description><![CDATA[<p>The post <a rel="nofollow" href="https://www.genuitec.com/optimal-codemix-performance/">Ingenuity + Awesome Customers = Optimal CodeMix Performance</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
+		<title>Angular Library Tutorial</title>
+		<link>https://www.genuitec.com/angular-library-tutorial/</link>
+		<pubDate>Tue, 30 Jul 2019 15:14:03 +0000</pubDate>
+		<dc:creator><![CDATA[dunebook7]]></dc:creator>
+				<category><![CDATA[Genuitec]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=619045</guid>
+		<description><![CDATA[<p>The post <a rel="nofollow" href="https://www.genuitec.com/angular-library-tutorial/">Angular Library Tutorial</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
+		<title>Build a simple Cryptocurrency App using Angular 8</title>
+		<link>https://www.genuitec.com/build-a-simple-cryptocurrency-app-using-angular-8/</link>
+		<pubDate>Tue, 23 Jul 2019 20:35:44 +0000</pubDate>
+		<dc:creator><![CDATA[dunebook7]]></dc:creator>
+				<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[How-to's]]></category>
+		<category><![CDATA[Angular]]></category>
+		<category><![CDATA[angular ide]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=618081</guid>
+		<description><![CDATA[<p>The post <a rel="nofollow" href="https://www.genuitec.com/build-a-simple-cryptocurrency-app-using-angular-8/">Build a simple Cryptocurrency App using Angular 8</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
+		<title>CodeMix Fun Friday Links</title>
+		<link>https://www.genuitec.com/codemix-fun-friday-links-1/</link>
+		<pubDate>Fri, 12 Jul 2019 19:00:19 +0000</pubDate>
+		<dc:creator><![CDATA[Mauricio Valenzuela]]></dc:creator>
+				<category><![CDATA[Eclipse]]></category>
+		<category><![CDATA[Fun/Funny]]></category>
+		<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[codemix]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=615134</guid>
+		<description><![CDATA[<p>Hi folks, Welcome to CodeMix Fun Friday Links, where you can find a lot of interesting code Developers are having fun with, we wanted to check out some of those projects and see them working using our latest CodeMix release. Here are 5 examples of things we found interesting and wanted to share them, don&#8217;t [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.genuitec.com/codemix-fun-friday-links-1/">CodeMix Fun Friday Links</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
 		<title>Beginner&#8217;s Guide to Vue Modals</title>
 		<link>https://www.genuitec.com/beginners-guide-to-vue-modals/</link>
 		<pubDate>Fri, 05 Jul 2019 15:02:57 +0000</pubDate>
@@ -105,168 +224,6 @@
 <p>The post <a rel="nofollow" href="https://www.genuitec.com/myeclipse-2019-4-0-is-here-java-11-and-more/">MyEclipse 2019.4.0 Is Here &#8211; Java 11 and More</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
 ]]></description>
 		</item>
-		<item>
-		<title>Angular 7 Uploads Backed by Node.js</title>
-		<link>https://www.genuitec.com/angular-7-uploads-node-js/</link>
-		<pubDate>Tue, 02 Apr 2019 13:42:03 +0000</pubDate>
-		<dc:creator><![CDATA[dunebook7]]></dc:creator>
-				<category><![CDATA[Eclipse]]></category>
-		<category><![CDATA[Programming Tips]]></category>
-		<category><![CDATA[Webclipse]]></category>
-		<category><![CDATA[Angular]]></category>
-		<category><![CDATA[Angular uploads]]></category>
-		<category><![CDATA[node.js]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=611558</guid>
-		<description><![CDATA[<p>Web development has become more dynamic with time, mostly due to the continued development of various languages, tools, and frameworks, one of them being Angular. The recent release of Angular 7 comes with new features, such as virtual scrolling, drag and drop, and some CLI updates, among others.In this article, we will be building an [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/angular-7-uploads-node-js/">Angular 7 Uploads Backed by Node.js</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
-		<item>
-		<title>Benchmarking JavaScript: STS, Red Hat Dev Studio &#038; CodeMix</title>
-		<link>https://www.genuitec.com/benchmarking-javascript-sts-red-hat-dev-studio-codemix/</link>
-		<pubDate>Tue, 19 Mar 2019 22:51:47 +0000</pubDate>
-		<dc:creator><![CDATA[Brian Fernandes]]></dc:creator>
-				<category><![CDATA[Genuitec]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=611210</guid>
-		<description><![CDATA[<p>The post <a rel="nofollow" href="https://www.genuitec.com/benchmarking-javascript-sts-red-hat-dev-studio-codemix/">Benchmarking JavaScript: STS, Red Hat Dev Studio &#038; CodeMix</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
-		<item>
-		<title>DevStyle Adds Mojave Dark Styling and More!</title>
-		<link>https://www.genuitec.com/devstyle-adds-mojave-dark-more/</link>
-		<pubDate>Wed, 13 Mar 2019 19:20:17 +0000</pubDate>
-		<dc:creator><![CDATA[Wanda Muriy]]></dc:creator>
-				<category><![CDATA[Eclipse]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[MyEclipse]]></category>
-		<category><![CDATA[Programming Tips]]></category>
-		<category><![CDATA[Webclipse]]></category>
-		<category><![CDATA[bug fixes]]></category>
-		<category><![CDATA[dark styling]]></category>
-		<category><![CDATA[dark theme]]></category>
-		<category><![CDATA[mojave]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=610727</guid>
-		<description><![CDATA[<p>The new version of DevStyle, with Mojave dark styling, is here, bringing you a deeper level of dark, and more! We tailored DevStyle to fully exploit macOS Mojave’s new dark mode, but we did not forget about Windows and Linux users – there are improvements and fixes for you as well. Ready for a cool, [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/devstyle-adds-mojave-dark-more/">DevStyle Adds Mojave Dark Styling and More!</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
-		<item>
-		<title>Create a Simple Shopping Cart Using React and Node</title>
-		<link>https://www.genuitec.com/create-simple-shopping-cart-react-node/</link>
-		<pubDate>Mon, 04 Mar 2019 20:45:42 +0000</pubDate>
-		<dc:creator><![CDATA[dunebook7]]></dc:creator>
-				<category><![CDATA[Eclipse]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[MyEclipse]]></category>
-		<category><![CDATA[Programming Tips]]></category>
-		<category><![CDATA[Webclipse]]></category>
-		<category><![CDATA[express.js]]></category>
-		<category><![CDATA[express.js server]]></category>
-		<category><![CDATA[node.js]]></category>
-		<category><![CDATA[react]]></category>
-		<category><![CDATA[React shopping cart app]]></category>
-		<category><![CDATA[shopping cart app]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=607704</guid>
-		<description><![CDATA[<p>Web development has never been more exciting than now, with the introduction of new technologies and techniques, thanks to the dynamism and evolution of JavaScript. Now a web application can be configured using only JavaScript. This is made possible through the introduction of Node.js, which can be used on the server side to manage data, [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/create-simple-shopping-cart-react-node/">Create a Simple Shopping Cart Using React and Node</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
-		<item>
-		<title>Love Your Eclipse Again &#8211; CodeMix 3 Is Here</title>
-		<link>https://www.genuitec.com/love-your-eclipse-again-codemix-3-is-here/</link>
-		<pubDate>Thu, 14 Feb 2019 15:29:09 +0000</pubDate>
-		<dc:creator><![CDATA[timwebb]]></dc:creator>
-				<category><![CDATA[Eclipse]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[MyEclipse]]></category>
-		<category><![CDATA[Programming Tips]]></category>
-		<category><![CDATA[Webclipse]]></category>
-		<category><![CDATA[codemix]]></category>
-		<category><![CDATA[codemix 3]]></category>
-		<category><![CDATA[codemix release]]></category>
-		<category><![CDATA[software release]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=608747</guid>
-		<description><![CDATA[<p>At Genuitec, we are very excited about the CodeMix 3 release coming out this Valentine’s Day! Those of you who have been using CodeMix along its journey, will realize just how much this product has evolved since its release, less than a year ago.Optimization for Eclipse and Superior eLearning TechCodeMix 3, is distinct in that [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/love-your-eclipse-again-codemix-3-is-here/">Love Your Eclipse Again &#8211; CodeMix 3 Is Here</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
-		<item>
-		<title>Fullstack Vue App with Node, Express and MongoDB</title>
-		<link>https://www.genuitec.com/fullstack-vue-app-node-express-mongodb/</link>
-		<pubDate>Fri, 01 Feb 2019 15:35:33 +0000</pubDate>
-		<dc:creator><![CDATA[dunebook7]]></dc:creator>
-				<category><![CDATA[Eclipse]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[MyEclipse]]></category>
-		<category><![CDATA[Programming Tips]]></category>
-		<category><![CDATA[Webclipse]]></category>
-		<category><![CDATA[express.js]]></category>
-		<category><![CDATA[fullstack app]]></category>
-		<category><![CDATA[fullstack development]]></category>
-		<category><![CDATA[MongoDB]]></category>
-		<category><![CDATA[node.js]]></category>
-		<category><![CDATA[vue.js]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=607277</guid>
-		<description><![CDATA[<p>Much of application development, including web applications, has to do with CRUD &#8211; creation, reading, updating and deletion of data. Today, we will be building a fullstack Vue note-taking application and showing you how to perform the aforementioned processes, using Node.js running the Express.js framework for the back end, and MongoDB to store our data.Below [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/fullstack-vue-app-node-express-mongodb/">Fullstack Vue App with Node, Express and MongoDB</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
-		<item>
-		<title>Update RE: MyEclipse and Oracle JDK</title>
-		<link>https://www.genuitec.com/myeclipse-oraclejdk-update/</link>
-		<pubDate>Tue, 15 Jan 2019 16:26:34 +0000</pubDate>
-		<dc:creator><![CDATA[timwebb]]></dc:creator>
-				<category><![CDATA[Eclipse]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[MyEclipse]]></category>
-		<category><![CDATA[Webclipse]]></category>
-		<category><![CDATA[Oracle JDK]]></category>
-		<category><![CDATA[Oracle JDK licensing model]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=606801</guid>
-		<description><![CDATA[<p>There is a lot of concern regarding Oracle JDK in Enterprises, in particular with the new licensing model that is now in effect. If you are immediately required to discontinue use of all Oracle JDKs, scroll to the end for steps to facilitate that change. If you can wait just a little bit, it’s important [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/myeclipse-oraclejdk-update/">Update RE: MyEclipse and Oracle JDK</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
-		<item>
-		<title>MyEclipse 2018.12 &#8211; Start off the New Year on the Right Foot</title>
-		<link>https://www.genuitec.com/myeclipse-2018-12-release/</link>
-		<pubDate>Tue, 08 Jan 2019 19:11:42 +0000</pubDate>
-		<dc:creator><![CDATA[Brian Fernandes]]></dc:creator>
-				<category><![CDATA[Eclipse]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[MyEclipse]]></category>
-		<category><![CDATA[Webclipse]]></category>
-		<category><![CDATA[MyEclipse 2018.12]]></category>
-		<category><![CDATA[myeclipse release]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=605515</guid>
-		<description><![CDATA[<p>Did you miss the MyEclipse 2018.12 release around the holidays? Besides the usual complement of bug fixes, we’ve been able to fix some long standing performance issues, and make some fixes for Java 10 as well. If you’re using MyEclipse 2018, this is a release you’ll want to pick up.Performance FixesSlow JSP Typing &#8211; you’re [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/myeclipse-2018-12-release/">MyEclipse 2018.12 &#8211; Start off the New Year on the Right Foot</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
-		<item>
-		<title>Celebrating Success… with You! Happy Holidays!</title>
-		<link>https://www.genuitec.com/celebrating-success-happy-holidays/</link>
-		<pubDate>Thu, 20 Dec 2018 17:48:30 +0000</pubDate>
-		<dc:creator><![CDATA[Wanda Muriy]]></dc:creator>
-				<category><![CDATA[General]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[codemix]]></category>
-		<category><![CDATA[darkest dark]]></category>
-		<category><![CDATA[Happy Holidays]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=605359</guid>
-		<description><![CDATA[<p>We are excited about closing off another successful chapter! You’ve made 2018 a wonderful year: our Darkest Dark theme is number one on the Eclipse Marketplace with over 600K installs, and CodeMix keeps gaining popularity with over 100K installs &#8211; currently number seven.  Thank you for giving us your preference!We are getting ready to celebrate, [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/celebrating-success-happy-holidays/">Celebrating Success… with You! Happy Holidays!</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
 	</channel>
 </rss>
 
@@ -275,5 +232,5 @@ Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/pro
 
 Content Delivery Network via resources.cloud.genuitec.com
 
-Served from: www.genuitec.com @ 2019-07-12 00:43:54 by W3 Total Cache
+Served from: www.genuitec.com @ 2019-10-22 12:18:20 by W3 Total Cache
 -->

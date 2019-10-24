@@ -1,0 +1,15 @@
+import com.mpatric.mp3agic.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		try {
+			Mp3File mp3file = new Mp3File("audio/variant1.mp3");
+			System.out.println("Length of this mp3 is: " + mp3file.getLengthInSeconds() + " seconds");
+		}catch(Exception exp) {
+			System.out.println(exp);
+		}
+	}
+
+}
+

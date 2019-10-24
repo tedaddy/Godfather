@@ -1,0 +1,155 @@
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Toolkit;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+
+public class allVariants extends JFrame {
+
+	private JPanel contentPane;
+	public JButton[] btns = new JButton[30];
+	public JLabel[] lbls = new JLabel[30];
+	
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					allVariants frame = new allVariants();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public allVariants() {
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		int width = Double.valueOf(screenSize.getWidth()).intValue();
+		int height = Double.valueOf(screenSize.getHeight()).intValue();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setUndecorated(true);
+		setBounds(0, 0, width, height);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255,204,96));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel GodfatherLabel = new JLabel("Godfather");
+		GodfatherLabel.setVerticalAlignment(SwingConstants.TOP);
+		GodfatherLabel.setForeground(new Color(26,49,68));
+		GodfatherLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 53));
+		GodfatherLabel.setBounds(11, 3, 264, 43);
+		contentPane.add(GodfatherLabel);
+		
+		JLabel GradeLabel = new JLabel("9");
+		GradeLabel.setVerticalAlignment(SwingConstants.TOP);
+		GradeLabel.setForeground(new Color(26,49,68));
+		GradeLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 53));
+		GradeLabel.setBounds(1864, 3, 25, 49);
+		contentPane.add(GradeLabel);
+		
+		JLabel PillLabel = new JLabel("");
+		PillLabel.setIcon(new ImageIcon("S:\\GitHubReps\\Godfather\\images\\redpill1.png"));
+		PillLabel.setBounds(1792, -4, 62, 56);
+		contentPane.add(PillLabel);
+		
+		JSeparator verticalSeparator = new JSeparator(JSeparator.VERTICAL);
+		verticalSeparator.setOpaque(true);
+		verticalSeparator.setBackground(new Color(26,49,68));
+		verticalSeparator.setForeground(new Color(26,49,68));
+		verticalSeparator.setBounds(230, 50, 5, height-50);
+		contentPane.add(verticalSeparator);
+		
+		JSeparator horizontalSeparator = new JSeparator(JSeparator.HORIZONTAL);
+		horizontalSeparator.setOpaque(true);
+		horizontalSeparator.setBackground(new Color(26,49,68));
+		horizontalSeparator.setForeground(new Color(26,49,68));
+		horizontalSeparator.setBounds(0, 50, width, 5);
+		contentPane.add(horizontalSeparator);
+		
+		JLabel variants = new JLabel("variants");
+		variants.setMaximumSize(new Dimension(100, 100));
+		variants.setFont(new Font("Brandish", Font.PLAIN, 99));
+		variants.setForeground(new Color(26,49,68));
+		variants.setBounds(45, 310, 131, 455);
+		variants.setUI(new VerticalLabelUI(false));
+		contentPane.add(variants);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBorder(null);
+		scrollPane.setBounds(245, 66, 1665, 1003);
+		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		contentPane.add(scrollPane);
+		
+		JPanel gridpanel = new JPanel();
+		gridpanel.setBorder(null);
+		scrollPane.setViewportView(gridpanel);
+		gridpanel.setLayout(null);
+		gridpanel.setPreferredSize(new Dimension(1665, 20000));
+		gridpanel.setBackground(new Color(255,204,96));
+		
+		DBmanager db = new DBmanager();
+		int count = db.getCountOfVariants("test");
+		
+		int disposeY = 0;
+		int disposeX = 0;
+		
+		for( int i = 0; i < count; i++ ) {
+			btns[i] = new JButton("numb." + (i+1));
+			
+			btns[i].setContentAreaFilled(false);
+			btns[i].setRolloverEnabled(false);
+			btns[i].setRequestFocusEnabled(false);
+			btns[i].setEnabled(true);
+			btns[i].setFocusable(false);
+			btns[i].setFocusTraversalKeysEnabled(false);
+			btns[i].setFocusPainted(true);
+			btns[i].setBorderPainted(false);
+			
+			btns[i].setIcon(new ImageIcon("S:\\GitHubReps\\Godfather\\images\\variantCard.png"));
+			
+			btns[i].addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					System.out.println(((JButton) e.getSource()).getText());					
+				}
+			});
+			
+			btns[i].setFont(new Font("Brandish", Font.PLAIN, 30));
+			btns[i].setForeground(new Color(255,204,96));
+			btns[i].setVerticalTextPosition(SwingConstants.CENTER);
+			btns[i].setHorizontalTextPosition(SwingConstants.CENTER);
+			btns[i].setBounds(50+disposeX, 70+disposeY, 419, 241);
+			gridpanel.add(btns[i]);
+			disposeX+=469;
+			if( (i+1)%3==0 ) {
+				disposeY+=291;
+				disposeX=0;
+			}
+		}
+		
+	}
+}

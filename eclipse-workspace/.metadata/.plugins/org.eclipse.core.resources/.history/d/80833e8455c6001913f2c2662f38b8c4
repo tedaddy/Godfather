@@ -1,0 +1,105 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JProgressBar;
+
+public class testTask1 extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					testTask1 frame = new testTask1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public testTask1() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 1920, 1080);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(null);
+		setContentPane(contentPane);
+		int width = 1920;
+		int height = 1080;
+		contentPane.setBackground(new Color(255,204,96));
+		contentPane.setBorder(null);
+		contentPane.setLayout(null);
+		
+		JLabel GodfatherLabel = new JLabel("Godfather");
+		GodfatherLabel.setVerticalAlignment(SwingConstants.TOP);
+		GodfatherLabel.setForeground(new Color(26,49,68));
+		GodfatherLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 53));
+		GodfatherLabel.setBounds(11, 3, 264, 43);
+		contentPane.add(GodfatherLabel);
+		
+		JLabel GradeLabel = new JLabel("9");
+		GradeLabel.setVerticalAlignment(SwingConstants.TOP);
+		GradeLabel.setForeground(new Color(26,49,68));
+		GradeLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 53));
+		GradeLabel.setBounds(1864, 3, 25, 49);
+		contentPane.add(GradeLabel);
+		
+		JLabel PillLabel = new JLabel("");
+		PillLabel.setIcon(new ImageIcon("S:\\GitHubReps\\Godfather\\images\\redpill1.png"));
+		PillLabel.setBounds(1792, -4, 62, 56);
+		contentPane.add(PillLabel);
+		
+		JSeparator horizontalSeparator = new JSeparator(JSeparator.HORIZONTAL);
+		horizontalSeparator.setOpaque(true);
+		horizontalSeparator.setBackground(new Color(26,49,68));
+		horizontalSeparator.setForeground(new Color(26,49,68));
+		horizontalSeparator.setBounds(0, 50, width, 5);
+		contentPane.add(horizontalSeparator);
+		
+		JSeparator verticalSeparator = new JSeparator(JSeparator.VERTICAL);
+		verticalSeparator.setOpaque(true);
+		verticalSeparator.setBackground(new Color(26,49,68));
+		verticalSeparator.setForeground(new Color(26,49,68));
+		verticalSeparator.setBounds(50, 100, 5, 100);
+		contentPane.add(verticalSeparator);
+		
+		JLabel TaskLabel = new JLabel();
+		TaskLabel.setText("<html>Task 1. You are going to read the text aloud. You have 1.5 minutes to read text silently, and then be ready to read it aloud. <BR> a Remember that you will not have more than 2 minutes for reading aloud.</html>");
+		TaskLabel.setForeground(new Color(26,49,68));
+		TaskLabel.setVerticalAlignment(SwingConstants.TOP);
+		TaskLabel.setFont(new Font("Arial", Font.BOLD, 30));
+		TaskLabel.setBounds(60, 100, 1900, 200);
+		contentPane.add(TaskLabel);
+		
+		JLabel MainLabel = new JLabel();
+		String text = ("<html>" + "Chocolate is a food made from the seeds of a cacao bean. The taste of chocolate is often described as sweet because chocolate makers usually add a lot of sugar and milk for taste. This means that chocolatecan be bad for your teeth and health. There are three main types of chocolate: white chocolate, milk chocolate, and dark chocolate. White chocolate tastes much sweeter than the other two types, because it has more of the sweeter ingredients in it. White chocolate does not have any cocoa in it. It is mostly made of cocoa butter. Milk chocolate is sweet, but not as sweet as white chocolate. Milk chocolate has some cocoa. Dark chocolate is the least sweet and has the strongest chocolate flavor. Dark chocolate has up to 60-85 percent cocoa." + "</html>");
+		MainLabel.setText(text);
+		MainLabel.setForeground(new Color(26,49,68));
+		//MainLabel.setVerticalAlignment(SwingConstants.TOP);
+		MainLabel.setFont(new Font("Arial", Font.PLAIN, 30));
+		MainLabel.setBounds(60, 300, 1800, 500);
+		contentPane.add(MainLabel);
+		
+		JProgressBar progressBar = new JProgressBar();
+		contentPane.add(progressBar, BorderLayout.SOUTH);
+	}
+
+}

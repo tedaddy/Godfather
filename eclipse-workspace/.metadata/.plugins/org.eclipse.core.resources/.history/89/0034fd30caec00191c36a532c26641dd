@@ -1,0 +1,18 @@
+import com.mpatric.mp3agic.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		try {
+			Mp3File mp3file = new Mp3File("audio/variant1.mp3");
+			ID3v2 id3v2Tag = mp3file.getId3v2Tag();
+			System.out.println("Length of this mp3 is: " + mp3file.getLengthInSeconds() + " seconds");
+			System.out.println("Bitrate: " + mp3file.getBitrate() + " kbps " + (mp3file.isVbr() ? "(VBR)" : "(CBR)"));
+			System.out.println(mp3file.getLength());
+		}catch(Exception exp) {
+			System.out.println(exp);
+		}
+	}
+
+}
+

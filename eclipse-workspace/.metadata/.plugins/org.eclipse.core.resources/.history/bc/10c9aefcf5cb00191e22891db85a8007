@@ -1,0 +1,148 @@
+import javax.swing.*;
+import javax.swing.Timer;
+import javax.swing.border.EmptyBorder;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.*;
+import java.util.*; 
+
+public class testTask1 extends JFrame{
+
+	private JPanel contentPane;
+	String mode;
+	static Dictionary modes = new Hashtable();
+	int preparation_time = 90; //seconds
+	int perfomance_time = 120; //seconds
+	int seconds_counter;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		modes.put("preparation", 90);
+		modes.put("perfomance", 120);
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					testTask1 frame = new testTask1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	
+	public testTask1() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 1920, 1080);
+		setUndecorated(true);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		int width = 1920;
+		int height = 1080;
+		contentPane.setBackground(new Color(255,204,96));
+		contentPane.setBorder(null);
+		contentPane.setLayout(null);
+		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.X_AXIS));
+		
+		JLabel clockLabel = new JLabel("");
+		clockLabel.setForeground(new Color(26,49,68));
+		clockLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 99));
+		contentPane.add(clockLabel);
+		
+		mode = "perfomance";
+		
+		JLabel GodfatherLabel = new JLabel("Godfather");
+		GodfatherLabel.setVerticalAlignment(SwingConstants.TOP);
+		GodfatherLabel.setForeground(new Color(26,49,68));
+		GodfatherLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 53));
+		contentPane.add(GodfatherLabel);
+		
+		JLabel GradeLabel = new JLabel("9");
+		GradeLabel.setVerticalAlignment(SwingConstants.TOP);
+		GradeLabel.setForeground(new Color(26,49,68));
+		GradeLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 53));
+		contentPane.add(GradeLabel);
+		
+		JLabel PillLabel = new JLabel("");
+		PillLabel.setIcon(new ImageIcon("S:\\GitHubReps\\Godfather\\images\\redpill1.png"));
+		contentPane.add(PillLabel);
+		
+		JSeparator horizontalSeparator = new JSeparator(JSeparator.HORIZONTAL);
+		horizontalSeparator.setOpaque(true);
+		horizontalSeparator.setBackground(new Color(26,49,68));
+		horizontalSeparator.setForeground(new Color(26,49,68));
+		contentPane.add(horizontalSeparator);
+		
+		JSeparator verticalSeparator = new JSeparator(JSeparator.VERTICAL);
+		verticalSeparator.setOpaque(true);
+		verticalSeparator.setBackground(new Color(26,49,68));
+		verticalSeparator.setForeground(new Color(26,49,68));
+		contentPane.add(verticalSeparator);
+		
+		JLabel TaskLabel = new JLabel();
+		TaskLabel.setText("<html>Task 3. You are going to give a talk about news. You will have to start in 1.5 minutes and speak for not more than <BR> 2 minutes (10-12 sentences).</html>");
+		TaskLabel.setForeground(new Color(26,49,68));
+		TaskLabel.setVerticalAlignment(SwingConstants.TOP);
+		TaskLabel.setFont(new Font("Arial", Font.BOLD, 30));
+		contentPane.add(TaskLabel);
+		
+		JLabel MainLabel = new JLabel();
+		String text = ("<html>Remember to say:<ul><li>if you follow the news, and why;</li><li>where you usually get the news;</li><li>what you think the biggest news of this year was, and why;</li></ul>You have to talk continuously.</html>");
+		MainLabel.setText(text);
+		MainLabel.setForeground(new Color(26,49,68));
+		//MainLabel.setVerticalAlignment(SwingConstants.TOP);
+		MainLabel.setFont(new Font("Arial", Font.PLAIN, 30));
+		contentPane.add(MainLabel);
+			
+		JProgressBar progressBar = new JProgressBar();
+		progressBar.setMaximum((int)modes.get(mode));
+		progressBar.setBorder(null);
+		progressBar.setForeground(new Color(26,49,68));
+		progressBar.setValue(0);
+		contentPane.add(progressBar);
+		
+		JLabel secondsLabel = new JLabel((int)modes.get(mode) + " secs");
+		secondsLabel.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		secondsLabel.setForeground(new Color(26,49,68));
+		contentPane.add(secondsLabel);
+		
+	    Timer timer = new Timer(1000, new ActionListener() {
+	        public void actionPerformed(ActionEvent e) { 
+	        	seconds_counter+=1;
+	        	progressBar.setValue(progressBar.getValue()+1);
+	        	secondsLabel.setText((int)modes.get(mode) - seconds_counter + " sec");
+	        	if( seconds_counter==(int)modes.get(mode) ) ((Timer)e.getSource()).stop();
+	        }
+	    });
+	    
+	    seconds_counter=0;
+	    timer.start();
+	    
+		JButton skipButton = new JButton("skip " + mode + " >>");
+		skipButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				timer.stop();
+			}
+		});
+		skipButton.setFont(new Font("OCR A Extended", Font.PLAIN, 20));
+		skipButton.setContentAreaFilled(false);
+		skipButton.setRolloverEnabled(false);
+		skipButton.setRequestFocusEnabled(false);
+		skipButton.setBorderPainted(false);
+		skipButton.setEnabled(true);
+		skipButton.setFocusable(false);
+		skipButton.setFocusTraversalKeysEnabled(false);
+		skipButton.setFocusPainted(false);
+		contentPane.add(skipButton);
+		
+	}
+}

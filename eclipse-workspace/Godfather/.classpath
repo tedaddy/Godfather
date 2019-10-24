@@ -4,5 +4,9 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="S:/GitHubReps/Godfather/eclipse-workspace/libs/org.json.jar"/>
 	<classpathentry kind="lib" path="S:/GitHubReps/Godfather/eclipse-workspace/libs/jl1.0.1.jar"/>
+	<classpathentry kind="lib" path="S:/GitHubReps/Godfather/eclipse-workspace/libs/jacksonannotations.jar"/>
+	<classpathentry kind="lib" path="S:/GitHubReps/Godfather/eclipse-workspace/libs/jacksoncore.jar"/>
+	<classpathentry kind="lib" path="S:/GitHubReps/Godfather/eclipse-workspace/libs/jacksondatabind.jar"/>
+	<classpathentry kind="lib" path="S:/GitHubReps/Godfather/eclipse-workspace/libs/mp3agic.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

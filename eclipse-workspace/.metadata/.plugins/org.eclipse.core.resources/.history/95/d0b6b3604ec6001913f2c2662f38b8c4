@@ -1,0 +1,363 @@
+import java.awt.*;
+import java.awt.image.BufferedImage;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
+import javax.swing.Timer.*;
+import javax.swing.border.EmptyBorder;
+
+import java.io.*;
+import javax.swing.SwingConstants;
+import javax.swing.Timer;
+import javax.swing.JButton;
+import javax.swing.BoxLayout;
+import javax.swing.Box;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
+public class Window extends JFrame{
+	
+	static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+	static int width = Double.valueOf(screenSize.getWidth()).intValue();
+	static int height = Double.valueOf(screenSize.getHeight()).intValue();
+
+	public static void main(String[] args) {
+		
+		Window window = new Window();
+		JPanel contentPane = new JPanel();
+		contentPane.setLayout(new CardLayout());
+		MainPage mainPage = new MainPage(window, contentPane);
+	    AllVariants allVariants = new AllVariants(window, contentPane);
+	    Task1Page task1 = new Task1Page(window, contentPane);
+	    contentPane.add(task1, "Task 1 page");
+	    contentPane.add(mainPage, "Main Page"); 
+	    contentPane.add(allVariants, "All variants page");
+	    window.setContentPane(contentPane);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    window.setUndecorated(true);
+		window.setBounds(0, 0, width, height);
+		window.setVisible(true);
+
+	}
+
+}
+
+
+class MainPage extends JPanel{
+	
+	int width, height;
+	
+	public MainPage(Window window, JPanel contentPane) {
+		
+		this.width = window.width;
+		this.height = window.height;
+		
+		
+		try {	
+			
+			//BufferedImage myPicture = ImageIO.read(new File("src/images/main-page.png"));
+			//JLabel picLabel = new JLabel(new ImageIcon(myPicture));
+			//panel.add(picLabel);
+			
+		}catch(Exception ex) {System.out.println(ex);}
+		
+		this.setBackground(new Color(255,192,59));
+		this.setForeground(Color.DARK_GRAY);
+		window.getContentPane().add(this);
+		this.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblNewLabel = new JLabel("godfather");
+		lblNewLabel.setForeground(new Color(0,44,72));
+		lblNewLabel.setVerticalTextPosition(SwingConstants.BOTTOM);
+		lblNewLabel.setVerticalAlignment(SwingConstants.BOTTOM);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 200));
+		this.add(lblNewLabel, BorderLayout.NORTH);
+		
+		JLabel lblNewLabel_1 = new JLabel("Choose one pill. Choose wisely.");
+		lblNewLabel_1.setForeground(new Color(0,44,72));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setFont(new Font("OCR A Extended", Font.PLAIN, 48));
+		this.add(lblNewLabel_1, BorderLayout.SOUTH);
+		
+		JPanel panel_1 = new JPanel();
+		this.add(panel_1, BorderLayout.CENTER);
+		panel_1.setBackground(new Color(255,192,59));
+		panel_1.setLayout(null);
+		
+		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setRequestFocusEnabled(false);
+		lblNewLabel_3.setIcon(new ImageIcon("S:\\GitHubReps\\Godfather\\images\\bluepill1.png"));
+		lblNewLabel_3.setBounds((width/12)*8, (height/4)*2, 65, 62);
+		panel_1.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_2 = new JLabel();
+		lblNewLabel_2.setRequestFocusEnabled(false);
+		lblNewLabel_2.setBounds((width/12)*4, (height/4)*2, 65, 62);
+		panel_1.add(lblNewLabel_2);
+		lblNewLabel_2.setIcon(new ImageIcon("S:\\GitHubReps\\Godfather\\images\\redpill1.png"));
+		
+		JButton button = new JButton("11");
+		button.setContentAreaFilled(false);
+		button.setRolloverEnabled(false);
+		button.setRequestFocusEnabled(false);
+		button.setBorderPainted(false);
+		button.setEnabled(true);
+		button.setFocusable(false);
+		button.setFocusTraversalKeysEnabled(false);
+		button.setFocusPainted(false);
+		button.setFont(new Font("Hollywood Hills", Font.PLAIN, 30));
+		button.setForeground(new Color(0, 44, 72));
+		button.setBackground(new Color(0, 255, 0, 0));
+		button.setBounds((width/12)*7, (height/4)*2, 98, 183);
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println(11);
+                CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+                cardLayout.next(contentPane);
+			}
+		});
+		panel_1.add(button);
+		
+		
+		JButton btnNewButton = new JButton("9");
+		btnNewButton.setContentAreaFilled(false);
+		btnNewButton.setRolloverEnabled(false);
+		btnNewButton.setRequestFocusEnabled(false);
+		btnNewButton.setEnabled(true);
+		btnNewButton.setFocusable(false);
+		btnNewButton.setFocusTraversalKeysEnabled(false);
+		btnNewButton.setFocusPainted(false);
+		btnNewButton.setBorderPainted(false);
+		btnNewButton.setForeground(new Color(0,44,72));
+		btnNewButton.setBackground(new Color(0, 255, 0, 0));
+		btnNewButton.setFont(new Font("Hollywood Hills", Font.PLAIN, 30));
+		btnNewButton.setBounds((width/12)*4, (height/4)*2, 91, 183);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println(9);
+			}
+		});
+		panel_1.add(btnNewButton);
+		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon("S:\\GitHubReps\\Godfather\\images\\left_hand.png"));
+		lblNewLabel_4.setBounds((width/12)*4-80, (height/4)-80, 293, 357);
+		panel_1.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.setIcon(new ImageIcon("S:\\GitHubReps\\Godfather\\images\\right_hand.png"));
+		lblNewLabel_5.setBounds((width/12)*7, (height/4)-80, 264, 357);
+		panel_1.add(lblNewLabel_5);
+		
+		Timer tm = new Timer(1, new ActionListener() {
+		    public void actionPerformed(ActionEvent e) { 
+		    	Rectangle r = window.getBounds();
+		    	height = r.height;
+		    	width = r.width;
+		    	//System.out.println(height + "x" + width);
+		    	panel_1.removeAll();
+		    	lblNewLabel_3.setBounds((width/12)*7+100, (height/4)*2, 65, 62);
+		    	panel_1.add(lblNewLabel_3);
+		    	lblNewLabel_2.setBounds((width/12)*4, (height/4)*2, 65, 62);
+		    	panel_1.add(lblNewLabel_2);
+		    	button.setBounds((width/12)*7+60, (height/4)*2, 98, 183);
+		    	panel_1.add(button);
+		    	btnNewButton.setBounds((width/12)*4, (height/4)*2, 91, 183);
+		    	panel_1.add(btnNewButton);
+		    	lblNewLabel_4.setBounds((width/12)*4-80, (height/4)-80, 293, 357);
+		    	panel_1.add(lblNewLabel_4);
+		    	lblNewLabel_5.setBounds((width/12)*7, (height/4)-80, 264, 357);
+		    	panel_1.add(lblNewLabel_5);
+		    	panel_1.revalidate();
+		    	panel_1.repaint();
+		    }
+		});
+		
+		tm.start();
+	}
+	
+}
+
+class AllVariants extends JPanel{
+	
+	public JButton[] btns = new JButton[30];
+	public JLabel[] lbls = new JLabel[30];
+	int width, height;
+	
+	public AllVariants(Window window, JPanel contentPane) {
+		this.width = window.width;
+		this.height = window.height;
+		this.setBackground(new Color(255,204,96));
+		this.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.setLayout(null);
+		
+		JLabel GodfatherLabel = new JLabel("Godfather");
+		GodfatherLabel.setVerticalAlignment(SwingConstants.TOP);
+		GodfatherLabel.setForeground(new Color(26,49,68));
+		GodfatherLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 53));
+		GodfatherLabel.setBounds(11, 3, 264, 43);
+		this.add(GodfatherLabel);
+		
+		JLabel GradeLabel = new JLabel("9");
+		GradeLabel.setVerticalAlignment(SwingConstants.TOP);
+		GradeLabel.setForeground(new Color(26,49,68));
+		GradeLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 53));
+		GradeLabel.setBounds(1864, 3, 25, 49);
+		this.add(GradeLabel);
+		
+		JLabel PillLabel = new JLabel("");
+		PillLabel.setIcon(new ImageIcon("S:\\GitHubReps\\Godfather\\images\\redpill1.png"));
+		PillLabel.setBounds(1792, -4, 62, 56);
+		this.add(PillLabel);
+		
+		JSeparator verticalSeparator = new JSeparator(JSeparator.VERTICAL);
+		verticalSeparator.setOpaque(true);
+		verticalSeparator.setBackground(new Color(26,49,68));
+		verticalSeparator.setForeground(new Color(26,49,68));
+		verticalSeparator.setBounds(230, 50, 5, height-50);
+		this.add(verticalSeparator);
+		
+		JSeparator horizontalSeparator = new JSeparator(JSeparator.HORIZONTAL);
+		horizontalSeparator.setOpaque(true);
+		horizontalSeparator.setBackground(new Color(26,49,68));
+		horizontalSeparator.setForeground(new Color(26,49,68));
+		horizontalSeparator.setBounds(0, 50, width, 5);
+		this.add(horizontalSeparator);
+		
+		JLabel variants = new JLabel("variants");
+		variants.setMaximumSize(new Dimension(100, 100));
+		variants.setFont(new Font("Brandish", Font.PLAIN, 99));
+		variants.setForeground(new Color(26,49,68));
+		variants.setBounds(45, 310, 131, 455);
+		variants.setUI(new VerticalLabelUI(false));
+		this.add(variants);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBorder(null);
+		scrollPane.setBounds(245, 66, 1665, 1003);
+		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		this.add(scrollPane);
+		
+		JPanel gridpanel = new JPanel();
+		gridpanel.setBorder(null);
+		scrollPane.setViewportView(gridpanel);
+		gridpanel.setLayout(null);
+		gridpanel.setPreferredSize(new Dimension(1665, 20000));
+		gridpanel.setBackground(new Color(255,204,96));
+		
+		DBmanager db = new DBmanager();
+		int count = db.getCountOfVariants("test");
+		
+		int disposeY = 0;
+		int disposeX = 0;
+		
+		for( int i = 0; i < count; i++ ) {
+			btns[i] = new JButton("numb." + (i+1));
+			
+			btns[i].setContentAreaFilled(false);
+			btns[i].setRolloverEnabled(false);
+			btns[i].setRequestFocusEnabled(false);
+			btns[i].setEnabled(true);
+			btns[i].setFocusable(false);
+			btns[i].setFocusTraversalKeysEnabled(false);
+			btns[i].setFocusPainted(true);
+			btns[i].setBorderPainted(false);
+			
+			btns[i].setIcon(new ImageIcon("S:\\GitHubReps\\Godfather\\images\\variantCard.png"));
+			
+			btns[i].addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					System.out.println(((JButton) e.getSource()).getText());					
+				}
+			});
+			
+			btns[i].setFont(new Font("Brandish", Font.PLAIN, 30));
+			btns[i].setForeground(new Color(255,204,96));
+			btns[i].setVerticalTextPosition(SwingConstants.CENTER);
+			btns[i].setHorizontalTextPosition(SwingConstants.CENTER);
+			btns[i].setBounds(50+disposeX, 70+disposeY, 419, 241);
+			gridpanel.add(btns[i]);
+			disposeX+=469;
+			if( (i+1)%3==0 ) {
+				disposeY+=291;
+				disposeX=0;
+			}
+		}
+		
+	}
+	
+}
+
+class Task1Page extends JPanel{
+	
+	int width, height;
+	
+	public Task1Page(Window window, JPanel contentPane) {
+		this.width = window.width;
+		this.height = window.height;
+		this.setBackground(new Color(255,204,96));
+		this.setBorder(null);
+		this.setLayout(null);
+		
+		JLabel GodfatherLabel = new JLabel("Godfather");
+		GodfatherLabel.setVerticalAlignment(SwingConstants.TOP);
+		GodfatherLabel.setForeground(new Color(26,49,68));
+		GodfatherLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 53));
+		GodfatherLabel.setBounds(11, 3, 264, 43);
+		this.add(GodfatherLabel);
+		
+		JLabel GradeLabel = new JLabel("9");
+		GradeLabel.setVerticalAlignment(SwingConstants.TOP);
+		GradeLabel.setForeground(new Color(26,49,68));
+		GradeLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 53));
+		GradeLabel.setBounds(1864, 3, 25, 49);
+		this.add(GradeLabel);
+		
+		JLabel PillLabel = new JLabel("");
+		PillLabel.setIcon(new ImageIcon("S:\\GitHubReps\\Godfather\\images\\redpill1.png"));
+		PillLabel.setBounds(1792, -4, 62, 56);
+		this.add(PillLabel);
+		
+		JSeparator horizontalSeparator = new JSeparator(JSeparator.HORIZONTAL);
+		horizontalSeparator.setOpaque(true);
+		horizontalSeparator.setBackground(new Color(26,49,68));
+		horizontalSeparator.setForeground(new Color(26,49,68));
+		horizontalSeparator.setBounds(0, 50, width, 5);
+		this.add(horizontalSeparator);
+		
+		JSeparator verticalSeparator = new JSeparator(JSeparator.VERTICAL);
+		verticalSeparator.setOpaque(true);
+		verticalSeparator.setBackground(new Color(26,49,68));
+		verticalSeparator.setForeground(new Color(26,49,68));
+		verticalSeparator.setBounds(50, 100, 5, 100);
+		this.add(verticalSeparator);
+		
+		JLabel TaskLabel = new JLabel();
+		TaskLabel.setText("<html>Task 1. You are going to read the text aloud. You have 1.5 minutes to read text silently, and then be ready to read it aloud. <BR> a Remember that you will not have more than 2 minutes for reading aloud.</html>");
+		TaskLabel.setForeground(new Color(26,49,68));
+		TaskLabel.setVerticalAlignment(SwingConstants.TOP);
+		TaskLabel.setFont(new Font("Arial", Font.BOLD, 30));
+		TaskLabel.setBounds(60, 100, 1900, 200);
+		this.add(TaskLabel);
+		
+		JLabel MainLabel = new JLabel();
+		String text = "Chocolate is a food made from the seeds of a cacao bean. The taste of chocolate is often described as sweet because chocolate makers <BR> usually add a lot of sugar and milk for taste. This means that chocolatecan be bad for your teeth and health. There are three main types of chocolate: white chocolate, milk chocolate, and dark chocolate. White chocolate tastes much sweeter than the other two types, because it has more of the sweeter ingredients in it. White chocolate does not have any cocoa in it. It is mostly made of cocoa butter. Milk chocolate is sweet, but not as sweet as white chocolate. Milk chocolate has some cocoa. Dark chocolate is the least sweet and has the strongest chocolate flavor. Dark chocolate has up to 60-85 percent cocoa.";
+		MainLabel.setText("<>");
+		MainLabel.setForeground(new Color(26,49,68));
+		//MainLabel.setVerticalAlignment(SwingConstants.TOP);
+		MainLabel.setFont(new Font("Arial", Font.PLAIN, 30));
+		MainLabel.setBounds(60, 300, 1900, 500);
+		this.add(MainLabel);
+		
+	}
+	
+}

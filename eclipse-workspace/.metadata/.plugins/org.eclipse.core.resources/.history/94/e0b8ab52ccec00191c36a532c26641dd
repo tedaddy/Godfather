@@ -1,0 +1,17 @@
+import java.io.FileInputStream;
+
+import javazoom.jl.*;
+import javazoom.jl.player.JavaSoundAudioDevice;
+
+public class test {
+
+	public static void main(String[] args) {
+        try {
+        	FileInputStream fis = new FileInputStream("audio/variant1.mp3");
+        	JavaSoundAudioDevice js = new JavaSoundAudioDevice();
+        	System.out.println(js.getClass());
+        } catch(Exception e) {System.out.println(e);}
+	}
+
+}
+

@@ -1,0 +1,74 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Rectangle;
+import javax.swing.SpringLayout;
+import javax.swing.JSeparator;
+
+public class test extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					test frame = new test();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public test() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 1920, 1080);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255,204,96));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		SpringLayout sl_contentPane = new SpringLayout();
+		contentPane.setLayout(sl_contentPane);
+		
+		JButton btnNewButton = new JButton("godfather");
+		sl_contentPane.putConstraint(SpringLayout.NORTH, btnNewButton, 10, SpringLayout.NORTH, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.WEST, btnNewButton, 5, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.EAST, btnNewButton, 114, SpringLayout.WEST, contentPane);
+		btnNewButton.setFont(new Font("Hollywood Hills", Font.PLAIN, 18));
+		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);
+		contentPane.add(btnNewButton);
+		
+		JSeparator separator = new JSeparator();
+		sl_contentPane.putConstraint(SpringLayout.NORTH, separator, 58, SpringLayout.NORTH, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, separator, 1027, SpringLayout.NORTH, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.EAST, separator, 169, SpringLayout.WEST, contentPane);
+		separator.setOrientation(SwingConstants.VERTICAL);
+		separator.setOpaque(true);
+		sl_contentPane.putConstraint(SpringLayout.WEST, separator, 159, SpringLayout.WEST, contentPane);
+		contentPane.add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		sl_contentPane.putConstraint(SpringLayout.NORTH, separator_1, 50, SpringLayout.NORTH, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.WEST, separator_1, -5, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, separator_1, 23, SpringLayout.SOUTH, btnNewButton);
+		sl_contentPane.putConstraint(SpringLayout.EAST, separator_1, -1490, SpringLayout.EAST, contentPane);
+		separator.setOrientation(SwingConstants.HORIZONTAL);
+		separator_1.setOpaque(true);
+		contentPane.add(separator_1);
+	}
+}

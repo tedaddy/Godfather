@@ -1,3 +1,15 @@
+// Instruction
+/*
+
+
+variantModel variant = new variantModel()  -- Create new object of variantModel
+variant.tasks -- Array of tasks of variant
+variant.fromJSObject(JSONObject) -- Create from JSONObject variant model
+variant.createJSONObject() -- From variant model create JSONObject
+
+
+ */
+
 import org.json.JSONObject;
 
 public class variantModel {

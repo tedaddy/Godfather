@@ -1,0 +1,86 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+
+public class test extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JLabel lblTask;
+	private JTextField textField_1;
+	private JLabel lblTask_1;
+	private JTextField textField_2;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					test frame = new test();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public test() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 1920, 1080);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255,204,96));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		textField = new JTextField();
+		textField.setBounds(679, 356, 482, 126);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("Task 1");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("OCR A Extended", Font.PLAIN, 32));
+		lblNewLabel.setForeground(new Color(0,44,72));
+		lblNewLabel.setBounds(679, 287, 482, 58);
+		contentPane.add(lblNewLabel);
+		
+		lblTask = new JLabel("Task 2");
+		lblTask.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTask.setForeground(new Color(0, 44, 72));
+		lblTask.setFont(new Font("OCR A Extended", Font.PLAIN, 32));
+		lblTask.setBounds(679, 501, 482, 58);
+		contentPane.add(lblTask);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(679, 570, 482, 35);
+		contentPane.add(textField_1);
+		
+		lblTask_1 = new JLabel("Task 3");
+		lblTask_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTask_1.setForeground(new Color(0, 44, 72));
+		lblTask_1.setFont(new Font("OCR A Extended", Font.PLAIN, 32));
+		lblTask_1.setBounds(679, 629, 482, 58);
+		contentPane.add(lblTask_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(679, 708, 482, 126);
+		contentPane.add(textField_2);
+		setUndecorated(true);
+	}
+}
