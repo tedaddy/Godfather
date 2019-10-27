@@ -6,11 +6,11 @@ This is a quiz app for Russian teenagers. Model of famous exams, so called "ОГ
 ------------
 ### Get started
 .
-├── eclipse-workspace
-├── images
-├── patterns
-├── product
-└── README.md
+-├── eclipse-workspace
+-├── images
+-├── patterns
+-├── product
+-└── README.md
 
 1. Download [Java](https://www.java.com/en/download/ "Java")
 2. Donload project repository
