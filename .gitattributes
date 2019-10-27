@@ -1,1 +1,2 @@
-*.java linguist-detectable=true
+eclipse-workspace/Godfather/src/*.java linguist-detectable=true
+eclipse-workspace/Godfather/src/* linguist-vendored
