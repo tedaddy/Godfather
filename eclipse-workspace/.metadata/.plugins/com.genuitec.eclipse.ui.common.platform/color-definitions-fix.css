@@ -131,6 +131,27 @@ IEclipsePreferences#org-eclipse-mylyn-wikitext-ui {
 		'block-h6=font-size: 80%; font-weight: bold; color: #118bbd;'
 		'phrase-code=font-family: monospace; color: #6d72f6;'
 }
+IEclipsePreferences#org-eclipse-pde-ui {
+	preferences:
+		'editor.color.default=227,230,232'
+		'editor.color.externalized_string=135,203,19'
+		'editor.color.externalized_string_italic=true'
+		'editor.color.header_assignment=103,207,241'
+		'editor.color.header_assignment_bold=true'
+		'editor.color.header_attributes=135,203,19'
+		'editor.color.header_key=214,38,99'
+		'editor.color.header_key_bold=true'
+		'editor.color.header_osgi=38,139,210'
+		'editor.color.header_value=23,198,163'
+		'editor.color.header_value_italic=true'
+		'editor.color.instr=214,38,99'
+		'editor.color.instr_bold=true'
+		'editor.color.string=23,198,163'
+		'editor.color.string_italic=true'
+		'editor.color.tag=38,139,210'
+		'editor.color.tag_bold=true'
+		'editor.color.xml_comment=85,96,104'
+}
 IEclipsePreferences#org-eclipse-tm-terminal-control {
 	preferences:
 		'TerminalPrefInvertColors=true'
@@ -295,6 +316,12 @@ IEclipsePreferences#org-eclipse-ui-workbench {
 		'org.eclipse.mylyn.tasks.ui.colors.foreground.today.completed=92,146,110'
 		'org.eclipse.mylyn.tasks.ui.colors.foreground.today.scheduled=50,97,159'
 		'org.eclipse.mylyn.tasks.ui.colors.incoming.background=11,13,14'
+		'org.eclipse.pde.genericeditor.extension.editor.color.attribute=196,138,114'
+		'org.eclipse.pde.genericeditor.extension.editor.color.comment=93,134,75'
+		'org.eclipse.pde.genericeditor.extension.editor.color.header=115,130,140'
+		'org.eclipse.pde.genericeditor.extension.editor.color.quote=118,200,244'
+		'org.eclipse.pde.genericeditor.extension.editor.color.tag=86,156,214'
+		'org.eclipse.pde.genericeditor.extension.editor.color.text=207,212,216'
 		'org.eclipse.search.ui.match.highlight=73,83,90'
 		'org.eclipse.ui.editors.backgroundColor=0,0,0'
 		'org.eclipse.ui.editors.currentLineColor=7,8,8'

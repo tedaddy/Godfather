@@ -1,0 +1,172 @@
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Dictionary;
+import java.util.Hashtable;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.MatteBorder;
+
+public class test extends JFrame{
+
+	public static void main(String[] args) {
+		test window = new test();
+		Task1Pageee contentPane = new Task1Pageee(window);
+	    window.setContentPane(contentPane);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    window.setUndecorated(true);
+		window.setResizable(true);
+		window.setBounds(0, 0, 1920, 1080);
+		window.setVisible(true);
+	}
+
+}
+class Task1Pageee extends JPanel{
+	
+	int width, height;
+	String mode;
+	static Dictionary modes = new Hashtable();
+	int seconds_counter;
+	String task;
+	JProgressBar progressBar = new JProgressBar();
+	JButton skipButton = new JButton();
+	Timer timer;
+	JLabel MainLabel = new JLabel();
+	
+	
+	public Task1Page_11(test window) {
+		modes.put("preparation", 90);
+		modes.put("perfomance", 90);
+		setup("preparation");
+		this.setBackground(new Color(255,204,96));
+		this.setBorder(null);
+		this.setLayout(new BorderLayout(0, 0));
+		
+		JButton GodfatherLabel = new JButton("GODFATHER");
+		GodfatherLabel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				timer.stop();
+			}
+		});
+		GodfatherLabel.setBorder(new MatteBorder(0, 0, 5, 0, (Color) new Color(26,49,68)));
+		GodfatherLabel.setVerticalAlignment(SwingConstants.TOP);
+		GodfatherLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		GodfatherLabel.setForeground(new Color(26,49,68));
+		GodfatherLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 46));
+		GodfatherLabel.setContentAreaFilled(false);
+		GodfatherLabel.setRolloverEnabled(false);
+		GodfatherLabel.setRequestFocusEnabled(false);
+		GodfatherLabel.setBorderPainted(true);
+		GodfatherLabel.setEnabled(true);
+		GodfatherLabel.setFocusable(false);
+		GodfatherLabel.setFocusTraversalKeysEnabled(false);
+		GodfatherLabel.setFocusPainted(false); 
+		this.add(GodfatherLabel, BorderLayout.NORTH);
+		
+		JSplitPane splitPane_2 = new JSplitPane();
+		splitPane_2.setBorder(new EmptyBorder(100, 50, 0, 0));
+		splitPane_2.setBackground(new Color(255,204,96));
+		splitPane_2.setResizeWeight(0.1);
+		splitPane_2.setDividerSize(0);
+		splitPane_2.setOrientation(JSplitPane.VERTICAL_SPLIT);
+		this.add(splitPane_2, BorderLayout.CENTER);
+		
+		JLabel TaskLabel = new JLabel("<html> Task 1. Imagine that you are preparing a project with your friend. You have found some interesting material for the presentation and you want to read this text to your friend. You have 1.5 minutes to read the text silently, then be ready to read it out aloud. You will not have more than 1.5 minutes to read it.</html>");
+		TaskLabel.setVerticalAlignment(SwingConstants.TOP);
+		TaskLabel.setBorder(new MatteBorder(0, 5, 0, 0, (Color) new Color(26,49,68)));
+		TaskLabel.setFont(new Font("Arial", Font.BOLD, 20));
+		splitPane_2.setLeftComponent(TaskLabel);
+		
+		String text = ("<html>" + this.task + "</html>");
+		MainLabel.setText(text);
+		MainLabel.setForeground(new Color(26,49,68));
+		MainLabel.setFont(new Font("Arial", Font.PLAIN, 30));
+		splitPane_2.setRightComponent(MainLabel);
+		
+		JSplitPane splitPane = new JSplitPane();
+		splitPane.setBackground(new Color(255,204,96));
+		splitPane.setPreferredSize(new Dimension(0, 60));
+		splitPane.setBorder(null);
+		splitPane.setDividerSize(0);
+		splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
+		this.add(splitPane, BorderLayout.SOUTH);
+		
+		skipButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				timer.stop();
+	        	if( mode == "preparation" ){
+	        		setup("perfomance");
+	        	}
+	        	else if( mode == "perfomance" ) {
+	        	}
+			}
+		});
+		skipButton.setHorizontalAlignment(SwingConstants.LEFT);
+		skipButton.setFont(new Font("OCR A Extended", Font.PLAIN, 20));
+		skipButton.setBounds(20, 960, 307, 31);
+		skipButton.setContentAreaFilled(false);
+		skipButton.setRolloverEnabled(false);
+		skipButton.setRequestFocusEnabled(false);
+		skipButton.setBorderPainted(false);
+		skipButton.setEnabled(true);
+		skipButton.setFocusable(false);
+		skipButton.setFocusTraversalKeysEnabled(false);
+		skipButton.setFocusPainted(false);
+		splitPane.setLeftComponent(skipButton);
+		
+		JSplitPane splitPane_1 = new JSplitPane();
+		splitPane_1.setDividerSize(0);
+		splitPane_1.setResizeWeight(0.95);
+		splitPane_1.setBackground(new Color(255,204,96));
+		splitPane_1.setBorder(new EmptyBorder(0, 15, 5, 0));
+		splitPane.setRightComponent(splitPane_1);
+		
+		progressBar.setBorder(null);
+		progressBar.setForeground(new Color(26,49,68));
+		progressBar.setValue(0);
+		splitPane_1.setLeftComponent(progressBar);
+		
+		JLabel secondsLabel = new JLabel("5 sec");
+		secondsLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		secondsLabel.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		secondsLabel.setForeground(new Color(26,49,68));
+
+		splitPane_1.setRightComponent(secondsLabel);
+		
+	    timer = new Timer(1000, new ActionListener() {
+	        public void actionPerformed(ActionEvent e) { 
+	        	seconds_counter+=1;
+	        	progressBar.setValue(progressBar.getValue()+1);
+	        	secondsLabel.setText((int)modes.get(mode) - seconds_counter + " sec");
+	        	if( seconds_counter==(int)modes.get(mode) ) {
+	        		((Timer)e.getSource()).stop();
+		        	if( mode == "preparation" ){
+		        		setup("perfomance");
+		        	}
+		        	else if( mode == "perfomance" ) {
+		        	}
+	        	}
+	        }
+	    });
+	    
+	    seconds_counter=0;
+		
+	}
+	
+	public void setup(String mode) {
+		String text = ("<html>" + this.task + "</html>");
+		MainLabel.setText(text);
+		this.mode = mode;
+		this.seconds_counter = 0;
+		this.progressBar.setMaximum((int)modes.get(mode));
+		this.progressBar.setValue(0);
+		this.skipButton.setText("skip " + mode + " >>");
+		
+	}
+	
+}

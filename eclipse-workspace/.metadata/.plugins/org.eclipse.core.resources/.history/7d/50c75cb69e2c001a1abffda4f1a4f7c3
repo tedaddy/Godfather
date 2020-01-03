@@ -1,0 +1,16 @@
+import javax.swing.*;
+
+public class test extends JFrame{
+
+	public static void main(String[] args) {
+		test window = new test();
+		JPanel contentPane = new JPanel();
+	    window.setContentPane(contentPane);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    window.setUndecorated(true);
+		window.setResizable(true);
+		window.setBounds(0, 0, 1920, 1080);
+		window.setVisible(true);
+	}
+
+}

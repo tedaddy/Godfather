@@ -1,0 +1,118 @@
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSplitPane;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.MatteBorder;
+
+public class FirstFactory extends JFrame {
+
+	private JPanel contentPane;
+	static String ABSOLUTE_PATH;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				Path currentRelativePath = Paths.get("");
+				ABSOLUTE_PATH = currentRelativePath.toAbsolutePath().toString();
+				ABSOLUTE_PATH = ABSOLUTE_PATH.replaceAll("\\\\", "/");
+				try {
+				     GraphicsEnvironment ge = 
+				         GraphicsEnvironment.getLocalGraphicsEnvironment();
+				     ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(ABSOLUTE_PATH + "/fonts/HollyWoodHills.ttf")));
+				     ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(ABSOLUTE_PATH + "/fonts/OCR.TTF")));
+				     ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(ABSOLUTE_PATH + "/fonts/consolas.ttf")));
+				} catch (IOException|FontFormatException e) {
+				     System.out.println(e);
+				}
+				
+				
+				try {
+					FirstFactory frame = new FirstFactory();
+					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					frame.setUndecorated(true);
+					frame.setResizable(true);
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public FirstFactory() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 1920, 1080);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255,204,96));
+		contentPane.setBorder(null);
+		contentPane.setLayout(new BorderLayout(0, 0));
+		
+		JButton GodfatherLabel = new JButton("GODFATHER");
+		GodfatherLabel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		GodfatherLabel.setBorder(new MatteBorder(0, 0, 5, 0, (Color) new Color(26,49,68)));
+		GodfatherLabel.setVerticalAlignment(SwingConstants.TOP);
+		GodfatherLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		GodfatherLabel.setForeground(new Color(26,49,68));
+		GodfatherLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 46));
+		GodfatherLabel.setContentAreaFilled(false);
+		GodfatherLabel.setRolloverEnabled(false);
+		GodfatherLabel.setRequestFocusEnabled(false);
+		GodfatherLabel.setBorderPainted(true);
+		GodfatherLabel.setEnabled(true);
+		GodfatherLabel.setFocusable(false);
+		GodfatherLabel.setFocusTraversalKeysEnabled(false);
+		GodfatherLabel.setFocusPainted(false); 
+		contentPane.add(GodfatherLabel, BorderLayout.NORTH);
+		
+		JSplitPane splitPane = new JSplitPane();
+		splitPane.setBorder(new EmptyBorder(100, 50, 0, 0));
+		splitPane.setBackground(new Color(255,204,96));
+		splitPane.setResizeWeight(0.1);
+		splitPane.setDividerSize(0);
+		splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
+		contentPane.add(splitPane, BorderLayout.CENTER);
+		
+		JLabel TaskLabel = new JLabel("<html> Task 2. Study the advertisement.</html>");
+		TaskLabel.setBorder(new MatteBorder(0, 5, 0, 0, (Color) new Color(26,49,68)));
+		TaskLabel.setFont(new Font("Arial", Font.BOLD, 30/*window.fontSize()*/));
+		splitPane.setLeftComponent(TaskLabel);
+		
+		JSplitPane splitPane_2 = new JSplitPane();
+		//splitPane_2.setBorder(new EmptyBorder(100, 50, 0, 0));
+		splitPane_2.setBackground(new Color(255,204,96));
+		splitPane_2.setResizeWeight();
+		splitPane_2.setDividerSize(0);
+		splitPane_2.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
+		contentPane.add(splitPane_2, BorderLayout.CENTER);
+		
+		
+		setContentPane(contentPane);
+	}
+
+}

@@ -55,6 +55,7 @@ public class Window extends JFrame{
 	static Task2Page task2;
 	static Task3Page task3;
 	static Task1Page_11 task1_11;
+	static Task2Page_11 task2_11;
 	static CountDown countDown;
 	static AdminPanel adminPanel;
 	static String DATABASE_NAME = "";
@@ -97,9 +98,14 @@ public class Window extends JFrame{
 	    task2 = new Task2Page(window, contentPane);
 	    task3 = new Task3Page(window, contentPane);
 	    task1_11 = new Task1Page_11(window, contentPane);
+	    task2_11 = new Task2Page_11(window, contentPane);
 	    countDown = new CountDown(window, contentPane);
 	    adminPanel = new AdminPanel(window, contentPane);
-	        
+	    
+	    task2_11.setup("preparation");
+	    task2_11.timer.start();
+
+		contentPane.add(task2_11, "Task 2_11 page");
 	    contentPane.add(mainPage, "Main page");
 	    contentPane.add(allVariants, "All variants page");
 	    contentPane.add(task1, "Task 1 page");
@@ -1314,6 +1320,209 @@ class Task1Page_11 extends JPanel{
 	
 }
 
+class Task2Page_11 extends JPanel{
+	Dictionary modes = new Hashtable();
+	String mode;
+	int width, height;
+	int seconds_counter;
+	Timer timer;
+	JButton skipButton;
+	JProgressBar progressBar;
+	JLabel MainLabel;
+	
+	String[] tasks = new String[6];
+	
+	int questions=0;
+	
+	public Task2Page_11(Window window, JPanel contentPane) {
+		this.setBackground(new Color(255,204,96));
+		this.setBorder(null);
+		this.setLayout(new BorderLayout(0, 0));
+		
+		this.width = window.width;
+		this.height = window.height;
+		
+		modes.put("preparation", 90);
+		modes.put("perfomance", 20);
+		
+		this.tasks[0] = "<html>You are going to study abroad for three months in a language centre. You'd like to get more information about this language centre. In 1.5 minutes you are to ask five questions to find out the following:<ol><li>location of the language school</li><li>evening classes</li><li>number of people in a group</li><li>cost of one lesson</li><li>discounts for students</li></ol>You have 20 seconds to ask ezch qestion.</html>";
+		this.tasks[1] = "location of the language school";
+		this.tasks[2] = "evening classes";
+		this.tasks[3] = "number of people in a group";
+		this.tasks[4] = "cost of one lesson";
+		this.tasks[5] = "discounts for students";
+		
+		JButton GodfatherLabel = new JButton("GODFATHER");
+		GodfatherLabel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+            	cardLayout.show(contentPane, "All variants page");
+			}
+		});
+		GodfatherLabel.setBorder(new MatteBorder(0, 0, 5, 0, (Color) new Color(26,49,68)));
+		GodfatherLabel.setVerticalAlignment(SwingConstants.TOP);
+		GodfatherLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		GodfatherLabel.setForeground(new Color(26,49,68));
+		GodfatherLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 46));
+		GodfatherLabel.setContentAreaFilled(false);
+		GodfatherLabel.setRolloverEnabled(false);
+		GodfatherLabel.setRequestFocusEnabled(false);
+		GodfatherLabel.setBorderPainted(true);
+		GodfatherLabel.setEnabled(true);
+		GodfatherLabel.setFocusable(false);
+		GodfatherLabel.setFocusTraversalKeysEnabled(false);
+		GodfatherLabel.setFocusPainted(false); 
+		this.add(GodfatherLabel, BorderLayout.NORTH);
+		
+		JSplitPane splitPane = new JSplitPane();
+		splitPane.setBorder(new EmptyBorder(100, 50, 0, 0));
+		splitPane.setBackground(new Color(255,204,96));
+		splitPane.setResizeWeight(0.05);
+		splitPane.setDividerSize(0);
+		splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
+		this.add(splitPane, BorderLayout.CENTER);
+		
+		JLabel TaskLabel = new JLabel("<html>Task 2. Study the advertisement.</html>");
+		TaskLabel.setBorder(new MatteBorder(0, 5, 0, 0, (Color) new Color(26,49,68)));
+		TaskLabel.setFont(new Font("Arial", Font.BOLD, 30/*window.fontSize()*/));
+		splitPane.setLeftComponent(TaskLabel);
+		
+		JSplitPane splitPane_2 = new JSplitPane();
+		splitPane_2.setBorder(null);
+		splitPane_2.setBackground(new Color(255,204,96));
+		splitPane_2.setResizeWeight(0.75);
+		splitPane_2.setDividerSize(0);
+		splitPane_2.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
+		splitPane.setRightComponent(splitPane_2);
+		
+		MainLabel = new JLabel("");
+		//MainLabel.setBorder(new MatteBorder(0, 5, 0, 0, (Color) new Color(26,49,68)));
+		MainLabel.setForeground(new Color(26,49,68));
+		MainLabel.setFont(new Font("Arial", Font.PLAIN, 30));
+		splitPane_2.setLeftComponent(MainLabel);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setIcon(new ImageIcon("/media/serz/SAVED/GitHubReps/Godfather/images/9.jpg"));
+		splitPane_2.setRightComponent(lblNewLabel);
+		
+		JSplitPane splitPane_3 = new JSplitPane();
+		splitPane_3.setBackground(new Color(255,204,96));
+		splitPane_3.setPreferredSize(new Dimension(0, 60));
+		splitPane_3.setBorder(null);
+		splitPane_3.setDividerSize(0);
+		splitPane_3.setOrientation(JSplitPane.VERTICAL_SPLIT);
+		this.add(splitPane_3, BorderLayout.SOUTH);
+		
+		skipButton = new JButton("skip preparation >>");
+		skipButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if( mode == "preparation" ){
+					questions=+1;
+					timer.stop();
+	        		setup("perfomance");
+	        		window.countDown.setup("Task 2_11 page");
+	        		window.countDown.timer.start();
+	        		CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+	        		cardLayout.show(contentPane, "Count Down page");
+	        	}
+	        	else if( mode == "perfomance" ) {
+	        		timer.stop();
+	        		if( questions!=5 ) {
+	        			questions+=1;
+	        			setup("perfomance");
+		        		window.countDown.setup("Task 2_11 page");
+		        		window.countDown.timer.start();
+		        		CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+		        		cardLayout.show(contentPane, "Count Down page");
+	        		}else {
+		        		CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+		        		cardLayout.show(contentPane, "");	
+	        		}
+	        	}
+			}
+		});
+		skipButton.setHorizontalAlignment(SwingConstants.LEFT);
+		skipButton.setFont(new Font("OCR A Extended", Font.PLAIN, 20));
+		skipButton.setBounds(20, 960, 307, 31);
+		skipButton.setContentAreaFilled(false);
+		skipButton.setRolloverEnabled(false);
+		skipButton.setRequestFocusEnabled(false);
+		skipButton.setBorderPainted(false);
+		skipButton.setEnabled(true);
+		skipButton.setFocusable(false);
+		skipButton.setFocusTraversalKeysEnabled(false);
+		skipButton.setFocusPainted(false);
+		splitPane_3.setLeftComponent(skipButton);
+		
+		JSplitPane splitPane_4 = new JSplitPane();
+		splitPane_4.setDividerSize(0);
+		splitPane_4.setResizeWeight(0.95);
+		splitPane_4.setBackground(new Color(255,204,96));
+		splitPane_4.setBorder(new EmptyBorder(0, 15, 5, 0));
+		splitPane_3.setRightComponent(splitPane_4);
+		
+		progressBar = new JProgressBar();
+		progressBar.setBorder(null);
+		progressBar.setForeground(new Color(26,49,68));
+		progressBar.setValue(0);
+		splitPane_4.setLeftComponent(progressBar);
+		
+		JLabel secondsLabel = new JLabel("5 sec");
+		secondsLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		secondsLabel.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		secondsLabel.setForeground(new Color(26,49,68));
+
+		splitPane_4.setRightComponent(secondsLabel);
+		
+	    timer = new Timer(1000, new ActionListener() {
+	        public void actionPerformed(ActionEvent e) { 
+	        	seconds_counter+=1;
+	        	progressBar.setValue(progressBar.getValue()+1);
+	        	secondsLabel.setText((int)modes.get(mode) - seconds_counter + " sec");
+	        	if( seconds_counter==(int)modes.get(mode) ) {
+	        		((Timer)e.getSource()).stop();
+		        	if( mode == "preparation" ){
+		        		questions=+1;
+		        		setup("perfomance");
+		        		window.countDown.setup("Task 2_11 page");
+		        		window.countDown.timer.start();
+		        		CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+		        		cardLayout.show(contentPane, "Count Down page");
+		        	}
+		        	else if( mode == "perfomance" ) {
+		        		if( questions!=5 ) {
+		        			questions+=1;
+		        			setup("perfomance");
+			        		window.countDown.setup("Task 2_11 page");
+			        		window.countDown.timer.start();
+			        		CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+			        		cardLayout.show(contentPane, "Count Down page");
+		        		}else {
+			        		CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+			        		cardLayout.show(contentPane, "");	
+		        		}
+		        	}
+	        	}
+	        }
+	    });
+	    
+	    seconds_counter=0;
+	}
+	
+	public void setup(String mode) {
+		String text = ("<html>" + this.tasks[this.questions] + "</html>");
+		MainLabel.setText(text);
+		this.mode = mode;
+		this.seconds_counter = 0;
+		this.progressBar.setMaximum((int)modes.get(mode));
+		this.progressBar.setValue(0);
+		this.skipButton.setText("skip " + mode + " >>");
+		
+	}
+	
+}
+
 class CountDown extends JPanel{
 	int width, height;
 	int seconds_counter;
@@ -1358,6 +1567,11 @@ class CountDown extends JPanel{
 	                    case "Task 3 page":{
 	                	    cardLayout.show(contentPane, next_page);
 	                	    window.task3.timer.start();
+	                	    break;
+	                    }
+	                    case "Task 2_11 page":{
+	                	    cardLayout.show(contentPane, next_page);
+	                	    window.task2_11.timer.start();
 	                	    break;
 	                    }
 	                    
