@@ -1,0 +1,178 @@
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.JSplitPane;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.ImageIcon;
+
+public class FirstFactory extends JFrame {
+
+	private JPanel contentPane;
+	static String ABSOLUTE_PATH;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				Path currentRelativePath = Paths.get("");
+				ABSOLUTE_PATH = currentRelativePath.toAbsolutePath().toString();
+				ABSOLUTE_PATH = ABSOLUTE_PATH.replaceAll("\\\\", "/");
+				try {
+				     GraphicsEnvironment ge = 
+				         GraphicsEnvironment.getLocalGraphicsEnvironment();
+				     ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(ABSOLUTE_PATH + "/fonts/HollyWoodHills.ttf")));
+				     ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(ABSOLUTE_PATH + "/fonts/OCR.TTF")));
+				     ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(ABSOLUTE_PATH + "/fonts/consolas.ttf")));
+				} catch (IOException|FontFormatException e) {
+				     System.out.println(e);
+				}
+				
+				
+				try {
+					FirstFactory frame = new FirstFactory();
+					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					frame.setUndecorated(true);
+					frame.setResizable(true);
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public FirstFactory() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 1920, 1080);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255,204,96));
+		contentPane.setBorder(null);
+		contentPane.setLayout(new BorderLayout(0, 0));
+		
+		JButton GodfatherLabel = new JButton("GODFATHER");
+		GodfatherLabel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		GodfatherLabel.setBorder(new MatteBorder(0, 0, 5, 0, (Color) new Color(26,49,68)));
+		GodfatherLabel.setVerticalAlignment(SwingConstants.TOP);
+		GodfatherLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		GodfatherLabel.setForeground(new Color(26,49,68));
+		GodfatherLabel.setFont(new Font("Hollywood Hills", Font.PLAIN, 46));
+		GodfatherLabel.setContentAreaFilled(false);
+		GodfatherLabel.setRolloverEnabled(false);
+		GodfatherLabel.setRequestFocusEnabled(false);
+		GodfatherLabel.setBorderPainted(true);
+		GodfatherLabel.setEnabled(true);
+		GodfatherLabel.setFocusable(false);
+		GodfatherLabel.setFocusTraversalKeysEnabled(false);
+		GodfatherLabel.setFocusPainted(false); 
+		contentPane.add(GodfatherLabel, BorderLayout.NORTH);
+		
+		JSplitPane splitPane = new JSplitPane();
+		splitPane.setBorder(new EmptyBorder(100, 50, 0, 0));
+		splitPane.setBackground(new Color(255,204,96));
+		splitPane.setResizeWeight(0.05);
+		splitPane.setDividerSize(0);
+		splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
+		contentPane.add(splitPane, BorderLayout.CENTER);
+		
+		JLabel TaskLabel = new JLabel("<html>Task 2. Study the advertisement.</html>");
+		TaskLabel.setBorder(new MatteBorder(0, 5, 0, 0, (Color) new Color(26,49,68)));
+		TaskLabel.setFont(new Font("Arial", Font.BOLD, 30/*window.fontSize()*/));
+		splitPane.setLeftComponent(TaskLabel);
+		
+		JSplitPane splitPane_2 = new JSplitPane();
+		splitPane_2.setBorder(null);
+		splitPane_2.setBackground(new Color(255,204,96));
+		splitPane_2.setResizeWeight(0.75);
+		splitPane_2.setDividerSize(0);
+		splitPane_2.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
+		splitPane.setRightComponent(splitPane_2);
+		
+		JLabel MainLabel = new JLabel("<html>You are going to study abroad for three months in a language centre. You'd like to get more information about this language centre. In 1.5 minutes you are to ask five questions to find out the following:<ol><li>location of the language school</li><li>evening classes</li><li>number of people in a group</li><li>cost of one lesson</li><li>discounts for students</li></ol>You have 20 seconds to ask ezch qestion.</html>");
+		//MainLabel.setBorder(new MatteBorder(0, 5, 0, 0, (Color) new Color(26,49,68)));
+		MainLabel.setForeground(new Color(26,49,68));
+		MainLabel.setFont(new Font("Arial", Font.PLAIN, 30));
+		splitPane_2.setLeftComponent(MainLabel);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setIcon(new ImageIcon("/media/serz/SAVED/GitHubReps/Godfather/images/9.jpg"));
+		splitPane_2.setRightComponent(lblNewLabel);
+		
+		JSplitPane splitPane_3 = new JSplitPane();
+		splitPane_3.setBackground(new Color(255,204,96));
+		splitPane_3.setPreferredSize(new Dimension(0, 60));
+		splitPane_3.setBorder(null);
+		splitPane_3.setDividerSize(0);
+		splitPane_3.setOrientation(JSplitPane.VERTICAL_SPLIT);
+		contentPane.add(splitPane_3, BorderLayout.SOUTH);
+		
+		JButton skipButton = new JButton("skip preparation >>");
+		skipButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		skipButton.setHorizontalAlignment(SwingConstants.LEFT);
+		skipButton.setFont(new Font("OCR A Extended", Font.PLAIN, 20));
+		skipButton.setBounds(20, 960, 307, 31);
+		skipButton.setContentAreaFilled(false);
+		skipButton.setRolloverEnabled(false);
+		skipButton.setRequestFocusEnabled(false);
+		skipButton.setBorderPainted(false);
+		skipButton.setEnabled(true);
+		skipButton.setFocusable(false);
+		skipButton.setFocusTraversalKeysEnabled(false);
+		skipButton.setFocusPainted(false);
+		splitPane_3.setLeftComponent(skipButton);
+		
+		JSplitPane splitPane_4 = new JSplitPane();
+		splitPane_4.setDividerSize(0);
+		splitPane_4.setResizeWeight(0.95);
+		splitPane_4.setBackground(new Color(255,204,96));
+		splitPane_4.setBorder(new EmptyBorder(0, 15, 5, 0));
+		splitPane_3.setRightComponent(splitPane_4);
+		
+		JProgressBar progressBar = new JProgressBar();
+		progressBar.setBorder(null);
+		progressBar.setForeground(new Color(26,49,68));
+		progressBar.setValue(0);
+		splitPane_4.setLeftComponent(progressBar);
+		
+		JLabel secondsLabel = new JLabel("5 sec");
+		secondsLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		secondsLabel.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		secondsLabel.setForeground(new Color(26,49,68));
+
+		splitPane_4.setRightComponent(secondsLabel);
+		
+		
+		setContentPane(contentPane);
+	}
+
+}
