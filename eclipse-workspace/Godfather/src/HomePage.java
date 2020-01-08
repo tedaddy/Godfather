@@ -14,7 +14,7 @@ import javax.swing.Timer;
 class HomePage extends Page{
 		
 	public HomePage(int width, int height, ScreenManager screenManager, String absolute_path) {
-		super(width, height);
+		super(width, height, absolute_path);
 		
 		JButton LogoLabel = new JButton("godfather");
 		LogoLabel.addActionListener(new ActionListener() {
@@ -45,7 +45,7 @@ class HomePage extends Page{
 		
 		JPanel panel_1 = new JPanel();
 		this.add(panel_1, BorderLayout.CENTER);
-		panel_1.setBackground(new Color(255, 204, 96));
+		panel_1.setBackground(new Color(255,204,96));
 		panel_1.setLayout(null);
 		
 		JLabel lblNewLabel_3 = new JLabel();
@@ -75,10 +75,8 @@ class HomePage extends Page{
 		button.setBounds((width/12)*8-50, (height/4)*2, 98, 183);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				/*window.DATABASE_NAME = "grade11";
-				window.allVariants.reload(window, contentPane);
-                CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-                cardLayout.next(contentPane);*/
+				screenManager.setGrade11th();
+				screenManager.showPage("store");
 			}
 		});
 		panel_1.add(button);
@@ -99,10 +97,8 @@ class HomePage extends Page{
 		btnNewButton.setBounds((width/12)*4-10, (height/4)*2, 91, 183);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				/*window.DATABASE_NAME = "grade9";
-				window.allVariants.reload(window, contentPane);
-                CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-                cardLayout.next(contentPane);*/
+				screenManager.setGrade9th();
+				screenManager.showPage("store");
 			}
 		});
 		panel_1.add(btnNewButton);
