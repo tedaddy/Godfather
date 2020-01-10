@@ -20,8 +20,8 @@ public class VariantStorePage extends Page{
 	JButton[] cards;
 	Grade grade;
 	
-	public VariantStorePage(int width, int height, ScreenManager screenManager, String absolute_path) {
-		super(width, height, absolute_path);
+	public VariantStorePage(ScreenManager screenManager) {
+		super(screenManager);
 		
 		HomeButton homeButton = new HomeButton();
 
@@ -41,6 +41,11 @@ public class VariantStorePage extends Page{
 		this.add(scrollPane, BorderLayout.CENTER);
 		scrollPane.setViewportView(gridpanel);
 		
+	}
+	
+	public void setGrade(Grade grade) {
+		this.grade = grade;
+		BuildGrid();
 	}
 	
 	public void BuildGrid() {
