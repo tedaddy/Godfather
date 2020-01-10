@@ -26,8 +26,8 @@ import javax.swing.tree.DefaultTreeModel;
 public class AdminPanelPage extends Page{
 	String name = "";
 	
-	public AdminPanelPage(int width, int height, ScreenManager screenManager, String absolute_path) {
-		super(width, height, absolute_path);
+	public AdminPanelPage(ScreenManager screenManager) {
+		super(screenManager);
 		JSplitPane splitPane = new JSplitPane();
 		splitPane.setBackground(new Color(255,204,96));
 		splitPane.setBorder(new EmptyBorder(20, 10, 0, 0));

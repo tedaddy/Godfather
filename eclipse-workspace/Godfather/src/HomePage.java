@@ -13,8 +13,8 @@ import javax.swing.Timer;
 
 class HomePage extends Page{
 		
-	public HomePage(int width, int height, ScreenManager screenManager, String absolute_path) {
-		super(width, height, absolute_path);
+	public HomePage(ScreenManager screenManager) {
+		super(screenManager);
 		
 		JButton LogoLabel = new JButton("godfather");
 		LogoLabel.addActionListener(new ActionListener() {
@@ -75,7 +75,7 @@ class HomePage extends Page{
 		button.setBounds((width/12)*8-50, (height/4)*2, 98, 183);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				screenManager.setGrade11th();
+				setGrade11th();
 				screenManager.showPage("store");
 			}
 		});
@@ -97,7 +97,7 @@ class HomePage extends Page{
 		btnNewButton.setBounds((width/12)*4-10, (height/4)*2, 91, 183);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				screenManager.setGrade9th();
+				setGrade9th();
 				screenManager.showPage("store");
 			}
 		});
@@ -134,6 +134,14 @@ class HomePage extends Page{
 		});
 		
 		tm.start();
+	}
+	
+	private void setGrade9th() {
+		screenManager.store.setGrade(new Grade9th());
+	}
+	
+	private void setGrade11th() {
+		screenManager.store.setGrade(new Grade11th());
 	}
 	
 }
